@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-const names = ['José', 'Luiz', 'Joāo'];
-
 class Greeting extends Component {
   render() {
     return (
@@ -12,6 +10,13 @@ class Greeting extends Component {
 }
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      names: ['José', 'Luiz', 'Joāo'],
+    };
+  }
+
   render() {
     return (
       <View>
@@ -19,7 +24,14 @@ export default class App extends Component {
           names.map((name, index) => <Greeting name={ name } key={ index } />)
         }
         <Button
-          onPress={() => { names.push('Ana') }}
+          onPress={() => {
+              this.setState(state => (
+                {
+                  names: state.names.concat(['Ana']),
+                }
+              ));
+            }
+          }
           title="Add Ana"
         />
       </View>
