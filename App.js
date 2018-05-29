@@ -21,7 +21,7 @@ export default class App extends Component {
     return (
       <View>
         {
-          names.map((name, index) => <Greeting name={ name } key={ index } />)
+          this.state.names.map((name, index) => <Greeting name={ name } key={ index } />)
         }
         <Button
           onPress={() => {
