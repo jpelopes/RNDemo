@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  redGreeting: {
+    color: '#f00',
+  },
+  background: {
+    backgroundColor: 'blue',
+  },
+});
 
 class Greeting extends Component {
   render() {
     return (
-      <Text>Hello { this.props.name }</Text>
+      <Text style={ styles.redGreeting }>Hello { this.props.name }</Text>
     );
   }
 }
@@ -19,7 +28,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <View>
+      <View style={ styles.background }>
         {
           names.map((name, index) => <Greeting name={ name } key={ index } />)
         }
