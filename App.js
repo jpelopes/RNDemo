@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
+const names = ['José', 'Luiz', 'Joāo'];
+
 class Greeting extends Component {
   render() {
     return (
@@ -13,9 +15,9 @@ export default class App extends Component {
   render() {
     return (
       <View>
-        <Greeting name={'José'} />
-        <Greeting name={'Luiz'} />
-        <Greeting name={'Joāo'} />
+        {
+          names.map((name, index) => <Greeting name={ name } key={ index } />)
+        }
       </View>
     );
   }
