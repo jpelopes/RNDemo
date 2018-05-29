@@ -30,7 +30,7 @@ export default class App extends Component {
     return (
       <View style={ styles.background }>
         {
-          names.map((name, index) => <Greeting name={ name } key={ index } />)
+          this.state.names.map((name, index) => <Greeting name={ name } key={ index } />)
         }
         <Button
           onPress={() => {
