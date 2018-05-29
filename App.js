@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 
 const names = ['José', 'Luiz', 'Joāo'];
 
@@ -18,6 +18,10 @@ export default class App extends Component {
         {
           names.map((name, index) => <Greeting name={ name } key={ index } />)
         }
+        <Button
+          onPress={() => { names.push('Ana') }}
+          title="Add Ana"
+        />
       </View>
     );
   }
